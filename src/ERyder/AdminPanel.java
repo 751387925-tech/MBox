@@ -16,8 +16,10 @@ public class AdminPanel {
         System.out.println("\t2. View Registered Users");
         System.out.println("\t3. Remove Registered Users");
         System.out.println("\t4. Update Registered Users");
+        System.out.println("\t6. Demo the Bike Rental System");
         System.out.println("\t5. EXIT");
-
+        
+        BikeRental bikeRental = new BikeRental();
         int choice = scanner.nextInt();
         scanner.nextLine();
 
@@ -37,6 +39,8 @@ public class AdminPanel {
             case 5:
                 System.out.println("Exiting...");
                 break;
+            case 6:
+                bikeRental.simulateApplicationInput();
             default:
                 System.out.println("Invalid choice. Please try again");
         }
