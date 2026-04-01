@@ -1,7 +1,7 @@
 package ERyder;
 import java.util.*;
 import java.time.*;
-public class BikeRental{
+private class BikeRental{
     private boolean isRegisteredUser;
     private String emailAddress;
     private String location;
@@ -59,15 +59,16 @@ public class BikeRental{
     }
     private void reserveBike(String bikeID){
         if(bikeID.isEmpty()){
-
+            System.out.println("Sorry, we're unable to reserve a bike at this time. Please try again later.");
         }
+        
         else {
             for(Bike bike : BikeDatabase.bikes){
                 if(bikeID.equals(bike.getBikeID())){
                     tripStartTime = LocalDateTime.now();
                     bike.setIsAvailable(false);
                     bike.setLastUsedTime(tripStartTime);
-                    System.out.println("Reserving the bike with the(bikeID). Please following the on-screen instructions to locate the bike and start your pleasent journey.");
+                    System.out.println("Reserving the bike with the(" + bikeID + "). Please following the on-screen instructions to locate the bike and start your pleasent journey.");
                     activeRental = new ActiveRental(bikeID, emailAddress, tripStartTime);
                     activeRentalsList.add(activeRental);
                     break;
