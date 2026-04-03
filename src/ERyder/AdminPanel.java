@@ -49,6 +49,8 @@ public class AdminPanel {
         System.out.println("\t3. Remove Registered Users");
         System.out.println("\t4. Update Registered Users");
         System.out.println("\t6. Demo the Bike Rental System");
+        System.out.println("\t7. View System Logs");
+        System.out.println("\t8. Manage Pending Bike Requests");
         System.out.println("\t5. EXIT");
         
         //BikeRental bikeRental = new BikeRental();
@@ -75,6 +77,36 @@ public class AdminPanel {
                 break;
             case 6:
                 simulateApplicationInput();
+            case 7:
+                BikeService bikeService = new BikeService();
+                bikeService.viewSystemLogs();
+            case 8:
+                System.out.println("1. View Queue");
+                System.out.println("2. Update Queue");
+                System.out.println("3. EXIT");
+                int queueChoice = scanner.nextInt();
+                scanner.nextLine();
+                switch(queueChoice){
+                    case 1:
+                        for(BikeRequest request : bikeRequestQueue){
+                            System.out.println(request);
+                        }
+                        break;
+                    case 2:
+                        if(bikeRequestQueue.isEmpty()){
+                            System.out.println("No pending bike requests at the moment.");
+                        }
+                        else {
+                            bikeRequestQueue.poll();
+                            System.out.println("The oldest bike request has been removed from the queue.");
+                        }
+                        break;
+                    case 3:
+                        System.out.println("Exiting...");
+                        break;
+                    default:
+                        System.out.println("Invalid choice. Please try again");
+                }
             default:
                 System.out.println("Invalid choice. Please try again");
         }
