@@ -76,10 +76,12 @@ public class AdminPanel {
                 System.out.println("Exiting...");
                 break;
             case 6:
-                simulateApplicationInput();
+                userService.simulateApplicationInput();
+                break;
             case 7:
                 BikeService bikeService = new BikeService();
                 bikeService.viewSystemLogs();
+                break;
             case 8:
                 System.out.println("1. View Queue");
                 System.out.println("2. Update Queue");

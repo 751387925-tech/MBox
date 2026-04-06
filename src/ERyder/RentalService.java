@@ -3,8 +3,8 @@ package ERyder;
 import java.time.LocalDateTime;
 import java.util.LinkedList;
 import java.util.Stack;
-
 public class RentalService{
+    private final double BASE_FARE = 3.0;
     private final LinkedList<ActiveRental> activeRentalsList = new LinkedList<>();
     private Stack<ERyderLogs> logStack = new Stack<>();
     public void startRental(String bikeID, String email) {
@@ -18,6 +18,7 @@ public class RentalService{
         while (it.hasNext()) {
             ActiveRental r = it.next();
             if (bikeID.equals(r.getBikeID())) {
+                calculateFare(BASE_FARE);
                 it.remove();
                 bikeRequestQueue.add(new BikeRequest(r.getBikeID(), r.getUserEmail(), LocalDateTime.now()));
                 break;

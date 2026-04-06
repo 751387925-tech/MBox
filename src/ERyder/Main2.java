@@ -1,5 +1,5 @@
-package Feedback;
-public class Mian{
+package ERyder;
+public class Main2{
     public static void main(String[] args) {
         String sent1 = "I was very satisfied with the service.";
         String sent2 = "The e-Bike is quite comfortable to ride.";

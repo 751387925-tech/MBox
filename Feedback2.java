@@ -1,5 +1,5 @@
-package Feedback;
-public class Feedback {
+package Mbox;
+public class Feedback2 {
     private String firstName;
     private String lastName;
     private String email;
@@ -7,7 +7,7 @@ public class Feedback {
     private String reviewID;
     private boolean longFeedback;
 
-    public Feedback(String firstName, String lastName, String email) {
+    public Feedback2(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;

@@ -37,6 +37,7 @@ public class UserRegistration {
             userType = "VIP User";
         } else {
             System.out.println("Invalid choice. Please enter 1 or 2.");
+            registration();
             return;
         }
 
